@@ -1,3 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+html {
+    height: auto;
+    min-height: 100%;
+}
+
+body {
+    background: #FFFFFF;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/*============================================================================ HEADER =================================================================================*/
+
+header {
+    background: #FFFFFF;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 50px;
+}
+
+header div {
+    display: inline-block;
+    flex-shrink: 0; 
+    z-index: 2;
+}
+
+header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+header ul {
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    list-style: none;
+}
+
+header nav a {
+    color: #1351d8;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 900;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: #1b357e;
+}
+
+/*============================================================================= MAIN ==================================================================================*/
+
+main {
+    flex: 1;
+    padding-bottom: 20px;
+}
 
 ul.modelcars {
     display: block;
@@ -10,17 +84,20 @@ ul.modelcars li {
     text-align: left;
     width: 300px;
     vertical-align: top;
+    margin: 10px;
 }
 
 img.photocar {
     display: block;
     width: 250px;
+    border-radius: 4px;
 }
 
 .checkbox {
     width: 30px;
     height: 30px;
     border: 1px solid #1b357e;
+    cursor: pointer;
 }
 
 .infocar div {
@@ -30,6 +107,7 @@ img.photocar {
 .info {
     width: 200px;
     vertical-align: top;
+    padding-left: 5px;
 }
 
 .textmodel {
@@ -37,49 +115,101 @@ img.photocar {
     text-align: left;
     font-size: 14px;
     color: #1351d8;
-    
+    font-weight: bold;
 }
+
 .textprice {
     display: block;
     text-align: left;
-    font-size: 10px;
+    font-size: 11px;
+    margin-top: 4px;
+    color: #555;
 }
+
+
+/*============================================================================ FOOTER =================================================================================*/
+
+footer {
+    background: #1B357E;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav#social {
+    display: block;
+}
+
+nav#social ul {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav#social ul img {
+    width: 28px;
+    display: block;
+}
+
+span.redesociais {
+    color: #ffffff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.footer-logo {
+    display: block;
+}
+
+/*============================================================================ TABEL ==================================================================================*/
 
 table {
     border-collapse: collapse;
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2vh;
-    margin-bottom: 10px;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 8px;
-  }
+    margin-bottom: 15px;
+}
 
-  td:nth-child(1) {  
+th, td {
+    text-align: left;
+    padding: 10px 8px;
+    font-size: 14px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+td:nth-child(1) {  
     font-weight: 700;
     width: 40%;
-  }
+    color: #1b357e;
+}
 
-  tr:nth-child(even) {background-color: #f2f2f2;}
+td:nth-child(2), td:nth-child(3) {
+    width: 30%;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
 div#compare {
-    position: absolute;
-    display: none;
-    width: 50vw;
-    max-width: 800px;
-    min-width: 400px;
-    height: 80vh;
-    max-height: 700px;
-    min-height: 350px;
-    background: #fff;
-    top: calc(100vh - 80%);
-    left: 25vw;
-    border-radius: 10px;
-    padding: 10px;
-    -webkit-box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
-    box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
+    position: fixed;
+    display: none; 
+    width: 60vw;
+    max-width: 850px;
+    min-width: 420px;
+    height: auto;
+    max-height: 85vh;
+    background: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    border-radius: 12px;
+    padding: 20px;
+    overflow-y: auto;
+    -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 2000; 
 }
