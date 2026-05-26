@@ -11,18 +11,32 @@ class Contato {
        }
 }
 
-function Post(form) {
-  let data = new Contato(form.elements.namedItem("nome").value,
-            form.elements.namedItem("sobrenome").value, 
-            form.elements.namedItem("email").value, 
-            form.elements.namedItem("cpf").value, 
-            form.elements.namedItem("telefone").value, 
-            form.elements.namedItem("contato").value,
-            form.elements.namedItem("mensagem").value);
+function Post(event, form) {
+
+    event.preventDefault();
+
+    let nome = form.elements.namedItem("nome").value;
+    let sobrenome = form.elements.namedItem("sobrenome").value;
+    let email = form.elements.namedItem("email").value;
+    let cpf = form.elements.namedItem("cpf").value;
+    let telefone = form.elements.namedItem("telefone").value;
+    let contato = form.elements.namedItem("contato").value;
+    let mensagem = form.elements.namedItem("mensagem").value;
+
+    const campos = [nome, sobrenome, email, cpf, telefone, mensagem];
+
+    if (campos.some(campo => campo.trim() === "")) {
+        alert("Todos os campos precisam ser preenchidos!");
+        return;
+    }
+
+    let data = new Contato(nome, sobrenome, email, cpf, telefone, contato, mensagem);
   
             console.log('Dados do usuario: ', data);
 
             Enviar(data.nome);
+
+            form.reset();
 }
 
 function Enviar(User) {

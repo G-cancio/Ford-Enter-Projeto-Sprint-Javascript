@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-html {
-    height: auto;
-    min-height: 100%;
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 body {
     background: #FFFFFF;
-    min-height: 100vh;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 /*============================================================================ HEADER =================================================================================*/
@@ -141,20 +140,29 @@ div#carousel-title {
 
 footer {
     background: #1B357E;
-    padding: 20px 40px;
+    padding: 15px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-shrink: 0;
 }
 
 nav#social {
-    display: block;
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
 }
 
 nav#social ul {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav#social ul li {
+    list-style: none;
 }
 
 nav#social ul img {
@@ -168,7 +176,25 @@ span.redesociais {
     margin-right: 10px;
 }
 
+.copyright {
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    flex: 1;
+}
+
+.copyright p {
+    margin: 0;
+    padding: 0;
+}
+
 .footer-logo {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.footer-logo img {
     display: block;
 }
 
@@ -185,6 +211,11 @@ span.redesociais {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+    
+    nav#social, .footer-logo {
+        justify-content: center;
+        flex: none;
     }
     
     nav#social ul {

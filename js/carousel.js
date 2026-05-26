@@ -17,7 +17,7 @@ class Carousel {
                 
                 Carousel.Render();
 
-                Carousel._interval = setInterval(function(){ Carousel.Next(); },5000);
+                Carousel._interval = setInterval(function(){ Carousel.Next(); }, 5000);
             }
         } else {
             throw "Method Start need a Array Variable.";
